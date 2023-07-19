@@ -1,0 +1,52 @@
+1. DM login shows all available campaigns
+    * Click on each campain to see details
+        - Each player character
+            * Most useful data shows on main campaign page
+            * Click on character to view more details
+        - Campaign setting and notes
+        - Current battle
+            * Campaign page only contains a link this page
+            * Can be null
+            * Contains monsters on map
+                - Multiples of same monster should be unique (Assign ID)
+                - Condensed monster view has clickable dice roller for main abilities/attacks
+                - Each monster module can expand to show all details
+                - Can assign conditions and custom tags
+                - **possibly icebox** Track HP
+            * Contains PCs
+                - Condensed PC view has clickable dice roller for secret perception/stealth/saving throw checks
+                - Can assign conditions and custom tags
+                - **possibly icebox** Track HP
+        - Handouts
+            * Images, files, and text boxes
+            * Toggle hide: players cannot access
+            * Toggle share: players have access
+        - Monsters
+            * Added monsters are available globally, but can be set as unavailable to a particular campaign
+            * Monsters list is a table of most important data
+                - Click anywhere in row to expand
+                - Edit button (in expand or to right?)
+                    * Duplicate button in edit screen to create copy 
+                        - Named 'Copy of ${this.monsterName}'
+                        - Colored on monster screen to highlight duplicate
+                        - Ask if user wants to move to the new monster, then redirect of close message
+                - Delete button (in expand or to right?)
+                    * alert message: Are you sure? This will remove this monster from your library.
+                - Highlighted Monster Data (default sort by CR):
+                    * Monster Name
+                    * Challenge Rating (CR)
+                    * Armor Class (AC)
+                    * Hit Points (HP)
+                    * List of attacks/abilities
+                    * Spell DC
+        - NPCs
+2. Player Character (PC) login shows all available characters (reference campaign)
+
+
+
+Models needed:
+    * Player Character (PC)
+    * Monsters 
+    * Non-Player Characters (NPC)
+    * Handouts
+     
