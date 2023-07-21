@@ -41,6 +41,17 @@
                     * Spell DC
         - NPCs
 2. Player Character (PC) login shows all available characters (reference campaign)
+    * Sort characters options:
+        - Recently viewed
+        - By Name
+        - By Level
+    * Show image uploaded for character portrait with level in bottom right (opaque circle with border matching icon border)
+    * Main view in list or tile (give option?)
+    * Inside a character module:
+        - Looks like character sheet with clickable "dice rollers"
+        - Saving changes pushes to other views (auto change on DM screen?)
+        - Right hand collapsing menu with personal notes pages and campaign notes, handouts, etc from DM
+        - Player has space for general notes, equipment, etc under character sheet
 
 
 
@@ -50,3 +61,7 @@ Models needed:
     * Non-Player Characters (NPC)
     * Handouts
      
+
+
+:::: ICEBOX ::::
+* Players/DMs can message each other, showing alert message on recipient's screen
