@@ -8,22 +8,20 @@ const campaignSchema = new Schema({
     },
     system: {
         type: String,
-        enum: ['D&D 5e', 'Pathfinder', 'Pathfinder 2e', 'Starfinder', ]
+        enum: ['D&D 5e', 'Pathfinder', 'Pathfinder 2e', 'Starfinder', 'Mage: The Ascension', 'Vampire: The Masquerade', 'Shadowrun', 'Fate', 'GURPS', 'Call of Cthulhu']
     },
     gameDay: {
-        type: Date,
-
+        type: String,
+        enum: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday'],
     },
     gameSchedule: {
         type: String,
-
+        enum: ['Every week', 'Every other week']
     },
     nextGame: {
         type: Date,
-
     },
-    players: [playerSchema],
-    notes: [noteSchema],
+    // players: [playerSchema],
 }, {
     timestamps: true
 })

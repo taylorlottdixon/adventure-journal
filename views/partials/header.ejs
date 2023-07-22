@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <nav>
+      <img src="/images/android-chrome-192x192.png">
+      <a href="/campaigns" <%- title === 'My Campaigns' ? 'class="active"' : '' %>>My Campaigns</a>
+      
+        <a href="/monsters"	<%- title === 'My Monsters' ? 'class="active"' : '' %>>My Monsters</a>
+        <a href="/items" <%- title === 'My Items' ? 'class="active"' : '' %>>My Items</a>
+        <a href="/account">Account</a>      
+    </nav>
+  <main>

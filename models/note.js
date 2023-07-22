@@ -12,10 +12,10 @@ const noteSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: {
-            type: Boolean,
-            default: true,
-        }
+        // required: {
+        //     type: Boolean,
+        //     default: true,
+        // }
     }
 }, {
     timestamps: true
