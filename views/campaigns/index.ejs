@@ -9,8 +9,20 @@
         <% campaigns.forEach(function(c) { %>
             
             <div class="campaign">
+                <% if (campaigns.cover) { %>
+                    <img src="data:image/<%=campaigns.cover.contentType%>;base64,
+                        <%=campaigns.cover.data.toString('base64')%>" >
+                <% } %>
                 <h3><a href="/campaigns/<%= c._id %>"><%= c.name %></a></h3>
-                <p class="system"><%= c.system %></p>
+                <p class="system" 
+                    <% if (c.system === "D&D 5e") { %> style="background-color:Red" <% } %>
+                    <% if (c.system === "Pathfinder") { %> style="background-color:Blue" <% } %>
+                    <% if (c.system === "Pathfinder 2e") { %> style="background-color:LightBlue" <% } %>
+                    <% if (c.system === "Starfinder") { %> style="background-color:Smoke" <% } %>
+                    <% if (c.system === "Mage: The Ascension") { %> style="background-color:Purple" <% } %>
+                    <% if (c.system === "Vampire: The Masquerade") { %> style="background-color:DarkRed" <% } %> >
+                    <%= c.system %>
+                </p>
                 <h4>
                     Next Game: <br>
                     <%= c.nextGame %>
@@ -23,17 +35,21 @@
                     <% }) %>
                 <% } %>
                 </div>
-                <% if (campaigns.cover) { %>
-                    <img src="data:image/<%=campaigns.cover.contentType%>;base64,
-                        <%=campaigns.cover.data.toString('base64')%>" >
-                <% } %>
+                <div id="delete-icons">
+                    <span id="archive-camp-symb" class="material-symbols-outlined">
+                        archive
+                    </span>
+                    <span id="delete-camp-symb" class="material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
             </div>
             
         <% }) %>
     <% } %>
     <div class="addTile">
         <a href="/campaigns/new">
-            <span class="material-symbols-outlined">
+            <span id="add-camp-symb" class="material-symbols-outlined">
             add_circle
             </span>
         </a>

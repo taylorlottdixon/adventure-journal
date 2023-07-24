@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #424748;
@@ -192,6 +197,15 @@ div#campaignSubmit {
   border: solid 2px #424748;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 1vh;
+}
+
+div.campaign > p {
+  border-radius: 50px;
+  color: white;
+  padding: 1.25vh;
+  font-weight: bold;
 }
 
 .header {
@@ -199,7 +213,7 @@ div#campaignSubmit {
   max-height: 5vh;
 }
 
-span.material-symbols-outlined {
+span#add-camp-symb {
   justify-content: center;
   align-items: center;
   font-size: 75px;
@@ -207,4 +221,22 @@ span.material-symbols-outlined {
 
 div.addTile > a {
   color: #424748;
+}
+
+div#delete-icons {
+  display: inline-block;
+  flex-direction: row;
+  width: 100%;
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+}
+
+span#delete-camp-symb {
+  float: right;
+}
+
+span#archive-camp-symb {
+  float: left;
 }
