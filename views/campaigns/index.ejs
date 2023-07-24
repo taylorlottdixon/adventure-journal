@@ -7,8 +7,9 @@
 <div id="campTiles">
     <% if (campaigns.length) { %>
         <% campaigns.forEach(function(c) { %>
+            
             <div class="campaign">
-                <h3><%= c.title %></h3>
+                <h3><a href="/campaigns/<%= c._id %>"><%= c.name %></a></h3>
                 <p class="system"><%= c.system %></p>
                 <h4>
                     Next Game: <br>
@@ -16,13 +17,18 @@
                 </h4>
                 <h4>Players</h4>
                 <div>
+                <% if (campaigns.players > 0) { %>
                     <% campaigns.players.forEach(function(p) { %>
                         <img alt="avatar" src="<%= p.avatar %>" referrerpolicy="no-referrer">
                     <% }) %>
+                <% } %>
                 </div>
-                <img src="data:image/<%=campaign.cover.contentType%>;base64,
-                    <%=campaign.cover.data.toString('base64')%>" >
+                <% if (campaigns.cover) { %>
+                    <img src="data:image/<%=campaigns.cover.contentType%>;base64,
+                        <%=campaigns.cover.data.toString('base64')%>" >
+                <% } %>
             </div>
+            
         <% }) %>
     <% } %>
     <div class="addTile">

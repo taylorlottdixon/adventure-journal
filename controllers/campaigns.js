@@ -16,7 +16,10 @@ async function index(req, res) {
 async function show(req, res) {
     const campaign = await Campaign.findById(req.params.id)
     const notes = await Note.find({ _id: { $nin: campaign.note }})
-    const players = await Player.find({ _id: { $nin: campaign.player }})
+    let players
+    if (campaign.player.length > 0) {
+        let players = await Player.find({ _id: { $nin: campaign.player }})
+    }
     res.render('campaigns/show', { title: 'Campaign Notes', campaign, notes, players})
 }
 

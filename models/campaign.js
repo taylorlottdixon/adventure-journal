@@ -16,7 +16,7 @@ const campaignSchema = new Schema({
     },
     gameSchedule: {
         type: String,
-        enum: ['Every week', 'Every other week']
+        enum: ['Every week', 'Every other week', 'Once per month', 'Other']
     },
     nextGame: {
         type: Date,

@@ -20,8 +20,24 @@
             <option value="Call of Cthulhu">Call of Cthulhu</option>
         </select>
         <label for="gameSchedule">Game Schedule:</label>
-        <label for="gameDay"></label>
-        <label for="nextGame"></label>
+        <select name="gameSchedule">
+            <option value="Every week">Every week</option>
+            <option value="Every other week">Every other week</option>
+            <option value="Once per month">Once per month</option>
+            <option value="Other">Other</option>
+        </select>
+        <label for="gameDay">Game Day:</label>
+        <select name="gameDay">
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+        <label for="nextGame">Next Game:</label>
+        <input type="datetime-local" name="nextGame">
     </div>
     <div id="campaignSubmit">
         <label for="cover"></label>
