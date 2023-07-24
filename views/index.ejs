@@ -1,7 +1,16 @@
 <%- include('./partials/header') %>
 
   <div>
-    <img src="/images/android-chrome-512x512.png" alt="Adventure Journal Logo">
+    <img src="/images/android-chrome-512x512.png" alt="Adventure Journal Logo" id="landingLogo">
   </div>
+  <div id="landingPage">
+    <p>Welcome to your Adventure Journal, where you can keep all of your campaign notes and plans in one single location, regardless of system, setting, module or homebrew, size, or play-style!</p>
+    <p>Login or register to begin your adventure</p>
+  </div>
+  <div id="login">
+    <button class="landingBtn" role="button" id="loginBtn"><span class="text">LOGIN</span></button><br>
+    <button class="landingBtn" role="button" id="registerBtn"><span class="text">REGISTER</span></button>
+  </div>
+
 
 <%- include('./partials/footer') %>
