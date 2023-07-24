@@ -21,6 +21,10 @@ const campaignSchema = new Schema({
     nextGame: {
         type: Date,
     },
+    cover: {
+        data: Buffer,
+        contentType: String,
+    },
     // players: [playerSchema],
 }, {
     timestamps: true

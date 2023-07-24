@@ -1,3 +1,37 @@
 <%- include('../partials/header') %>
 
+<div class="header">
+    <h1><%- title %></h1>
+</div>
+
+<div id="campTiles">
+    <% if (campaigns.length) { %>
+        <% campaigns.forEach(function(c) { %>
+            <div class="campaign">
+                <h3><%= c.title %></h3>
+                <p class="system"><%= c.system %></p>
+                <h4>
+                    Next Game: <br>
+                    <%= c.nextGame %>
+                </h4>
+                <h4>Players</h4>
+                <div>
+                    <% campaigns.players.forEach(function(p) { %>
+                        <img alt="avatar" src="<%= p.avatar %>" referrerpolicy="no-referrer">
+                    <% }) %>
+                </div>
+                <img src="data:image/<%=campaign.cover.contentType%>;base64,
+                    <%=campaign.cover.data.toString('base64')%>" >
+            </div>
+        <% }) %>
+    <% } %>
+    <div class="addTile">
+        <a href="/campaigns/new">
+            <span class="material-symbols-outlined">
+            add_circle
+            </span>
+        </a>
+    </div>
+</div>
+
 <%- include('../partials/footer') %>

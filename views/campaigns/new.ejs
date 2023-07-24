@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<form id="new-campaign-form" action="/campaigns" method="POST">
+    <div id="campaignDetails">
+        <label for="name">Campaign Title:</label>
+        <input type="text" name="name">
+        <label for="system">System:</label>
+        <select name="system">
+            <option value="D&D 5e">Dungeons and Dragons: 5th Edition</option>
+            <option value="Pathfinder">Pathfinder: 1st Edition</option>
+            <option value="Pathfinder 2e">Pathfinder: 2nd Edition</option>
+            <option value="Starfinder">Starfinder</option>
+            <option value="Mage: The Ascension">Mage: The Ascension</option>
+            <option value="Vampire: The Masquerade">Vampire: The Masquerade</option>
+            <option value="Shadowrun">Shadowrun</option>
+            <option value="Fate">Fate</option>
+            <option value="GURPS">GURPS</option>
+            <option value="Call of Cthulhu">Call of Cthulhu</option>
+        </select>
+        <label for="gameSchedule">Game Schedule:</label>
+        <label for="gameDay"></label>
+        <label for="nextGame"></label>
+    </div>
+    <div id="campaignSubmit">
+        <label for="cover"></label>
+        <input type="file" id="image" name="cover" value="" >
+        <br>
+        <input type="submit" value="Add Campaign">
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

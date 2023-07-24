@@ -1,3 +1,20 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<link rel='stylesheet' href='/stylesheets/error.css' />
+
+<body>
+    <nav>
+        <a id="home" href="/"><img src="/images/android-chrome-192x192.png"></a>
+      <a href="/campaigns">My Campaigns</a>
+      
+        <a href="/monsters">My Monsters</a>
+        <a href="/items">My Items</a>
+        <a href="/account" id="account">Account</a>      
+    </nav>
+  <main>
+<div id="error">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+</div>
+
+  </main>
+</body>

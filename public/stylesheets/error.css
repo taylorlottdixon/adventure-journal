@@ -146,65 +146,12 @@ body > main h1:first-child {
   }
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-    "col1 col2";
-}
-
-div#campaignDetails {
-  grid-area: col1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1em;
-}
-
-div#campaignSubmit {
-  grid-area: col2;
-  display: flex;
-  flex-direction: column;
-  padding-left: 1vh;
-
-  align-items: center;
-}
-
 #error {
-  background-image: url("public/images/nat1.png");
-}
-
-#campTiles {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  min-height: 500px;
   width: 100%;
+  background: transparent url(../images/nat1.png) no-repeat;
 }
 
-#campTiles > div {
-  display: flex;
-  flex-direction: column;
-  margin: 5vh;
-  height: 350px;
-  width: 250px;
-  background: whitesmoke;
-  border: solid 2px #424748;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  min-height: fit-content;
-  max-height: 5vh;
-}
-
-span.material-symbols-outlined {
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-}
-
-div.addTile > a {
-  color: #424748;
+#error h1, h2, pre {
+  margin-left: 520px;
 }
