@@ -1,4 +1,40 @@
 <%- include('../partials/header') %>
 
+<h3 class="genTitle"><%= title %></h3>
+
+<div id="notesMain">
+
+    <div id="notesSection">
+        <h1><%= campaign.name %></h1>
+        <form action="/categories" method="PUT">
+            <label for="name">New Category</label>
+            <input type="text" name="name">
+            <button type="submit">Add Catergory</button>
+        </form>
+
+        <% if (campaign.categories) { %>
+            <% campaign.categories.forEach(function(c) { %>
+                <h3><%= c.name %></h3>
+                <div class="categoryNotes">
+                    <% if (c.notes) { %>
+                        <% c.notes.forEach(function(n) { %>
+                            <div class="noteDiv">
+                                <a href="/notes/<%= n._id %>"><%= n.title %></a>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+    <div id="playersSection">
+        <h3>Player Characters</h3>
+    </div>
+
+</div>
+
+
     
 <%- include('../partials/footer') %>

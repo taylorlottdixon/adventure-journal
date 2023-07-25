@@ -10,4 +10,7 @@ router.get('/new', ensureLoggedIn, campaignsCtrl.new);
 router.get('/:id', campaignsCtrl.show);
 router.post('/', ensureLoggedIn, campaignsCtrl.create);
 
+// POST categories and notes
+router.post('/', ensureLoggedIn, campaignsCtrl.newCategory);
+
 module.exports = router;

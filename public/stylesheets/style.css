@@ -75,7 +75,6 @@ body > main {
   flex-direction: column;
   align-items: center;
   background-color: #f1e9e5;
-  padding: 20px;
   overflow-y: scroll;
 }
 
@@ -138,6 +137,7 @@ body > main h1:first-child {
   width: 100%;
   height: 100%;
   transition: 300ms;
+  text-align: center;
 }
 
 .landingBtn:hover span {
@@ -239,4 +239,67 @@ span#delete-camp-symb {
 
 span#archive-camp-symb {
   float: left;
+}
+
+div#notesPage {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  grid-template-areas: 
+    "docs note imgs";
+  column-gap: 1vh;
+  width: 100%;
+}
+
+div#docs {
+  grid-area: docs;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+div#note {
+  grid-area: note;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+div#imgs {
+  grid-area: imgs;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+.genTitle {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+div#notesMain {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+    "notes players";
+}
+
+div#notesSection {
+  grid-area: notes;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+div#playersSection {
+  grid-area: players;
+  background-color: #ABB7B4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+div#notesSection > h1 {
+  text-align: center;
 }

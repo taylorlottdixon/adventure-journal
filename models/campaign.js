@@ -25,6 +25,8 @@ const campaignSchema = new Schema({
         data: Buffer,
         contentType: String,
     },
+    categories: [ { type: Schema.Types.ObjectId, ref: 'Category' } ],
+    notes: [ { type: Schema.Types.ObjectId, ref: 'Category' } ]
     // players: [playerSchema],
 }, {
     timestamps: true

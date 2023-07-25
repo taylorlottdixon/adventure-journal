@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
@@ -16,7 +17,8 @@ const noteSchema = new Schema({
         //     type: Boolean,
         //     default: true,
         // }
-    }
+    },
+    category: ObjectId,
 }, {
     timestamps: true
 })
@@ -28,6 +30,8 @@ const categorySchema = new Schema({
         unique: true,
     },
     notes: [noteSchema],
+    campaign: ObjectId
 })
 
-module.exports = mongoose.model('Note', categorySchema)
+module.exports = mongoose.model('Note', noteSchema)
+module.exports = mongoose.model('Category', categorySchema)
