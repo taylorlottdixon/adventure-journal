@@ -1,13 +1,12 @@
 const Campaign = require('../models/campaign');
-const Note = require('../models/campaign');
-const Category = require('../models/campaign');
-const User = require('../models/user')
+// const Player = require('../models/player')
 
 module.exports = {
     index,
     show,
     new: newCampaign,
     create,
+    delete: deleteCampaign,
 };
 
 async function index(req, res) {
@@ -17,13 +16,9 @@ async function index(req, res) {
 
 async function show(req, res) {
     const campaign = await Campaign.findById(req.params.id)
-    const categories = await Category.find({})
-    const notes = await Note.find({ _id: { $nin: campaign.notes }})
-    let players
-    if (campaign.players) {
-        let players = await User.find({ _id: { $nin: campaign.player }})
-    }
-    res.render('campaigns/show', { title: 'Campaign Notes', campaign, categories, notes, players})
+    // const notes = await Note.find({ _id: { $nin: campaign.notes }})
+    // const players = await Player.find({ _id: { $nin: campaign.player }})
+    res.render('campaigns/show', { title: 'Campaign Notes', campaign})
 }
 
 function newCampaign(req, res) {
@@ -37,5 +32,15 @@ async function create(req, res) {
     } catch (err) {
         console.log(err)
         res.render('campaigns/new', { errorMsg: err.message })
+    }
+}
+
+async function deleteCampaign(req, res) {
+    await Campaign.findByIdAndDelete(req.params.id)
+    try {
+        res.redirect('/campaigns')
+    } catch (err) {
+        console.log(err)
+        res.redirect('/campaigns')
     }
 }
