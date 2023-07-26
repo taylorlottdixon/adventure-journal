@@ -39,9 +39,11 @@
                     <span id="archive-camp-symb" class="material-symbols-outlined">
                         archive
                     </span>
-                    <span id="delete-camp-symb" class="material-symbols-outlined">
+                    <form action="/campaigns/<%= c._id %>?_method=DELETE" method="POST">
+                        <button id="trash" type="submit"><span id="delete-camp-symb" class="material-symbols-outlined">
                         delete
-                    </span>
+                        </span></button>
+                    </form>
                 </div>
             </div>
             

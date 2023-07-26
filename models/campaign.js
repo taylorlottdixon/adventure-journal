@@ -2,6 +2,23 @@ const { ObjectId } = require('mongodb')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
+const noteSchema = new Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    content: String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    }
+, {
+    timestamps: true
+})
+
 const campaignSchema = new Schema({
     name: {
         type: String,
@@ -22,13 +39,7 @@ const campaignSchema = new Schema({
     nextGame: {
         type: Date,
     },
-    cover: {
-        data: Buffer,
-        contentType: String,
-    },
-    categories: [ { type: Schema.Types.ObjectId, ref: 'Category' } ],
-    notes: [ { type: Schema.Types.ObjectId, ref: 'Note' } ]
-    // players: [playerSchema],
+    notes: [noteSchema]
 }, {
     timestamps: true
 })

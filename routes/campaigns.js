@@ -9,11 +9,6 @@ router.get('/', campaignsCtrl.index);
 router.get('/new', ensureLoggedIn, campaignsCtrl.new);
 router.get('/:id', campaignsCtrl.show);
 router.post('/', ensureLoggedIn, campaignsCtrl.create);
-
-// // POST categories and notes
-// router.post('/:id', ensureLoggedIn, campaignsCtrl.newCategory);
-// router.post('/:id/note', ensureLoggedIn, campaignsCtrl.createNote);
-// // DELETE categories and notes
-// router.delete('/category/:id', ensureLoggedIn, campaignsCtrl.deleteCat);
+router.delete('/:id', ensureLoggedIn, campaignsCtrl.delete)
 
 module.exports = router;
