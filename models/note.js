@@ -18,20 +18,9 @@ const noteSchema = new Schema({
         //     default: true,
         // }
     },
-    category: ObjectId,
 }, {
     timestamps: true
 })
 
-const categorySchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    notes: [noteSchema],
-    campaign: ObjectId
-})
 
 module.exports = mongoose.model('Note', noteSchema)
-module.exports = mongoose.model('Category', categorySchema)

@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
@@ -26,7 +27,7 @@ const campaignSchema = new Schema({
         contentType: String,
     },
     categories: [ { type: Schema.Types.ObjectId, ref: 'Category' } ],
-    notes: [ { type: Schema.Types.ObjectId, ref: 'Category' } ]
+    notes: [ { type: Schema.Types.ObjectId, ref: 'Note' } ]
     // players: [playerSchema],
 }, {
     timestamps: true

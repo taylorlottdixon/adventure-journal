@@ -6,15 +6,18 @@
 
     <div id="notesSection">
         <h1><%= campaign.name %></h1>
-        <form action="/categories" method="PUT">
+        <form action="/campaigns/<%= campaign._id %>/categories" method="POST">
             <label for="name">New Category</label>
             <input type="text" name="name">
             <button type="submit">Add Catergory</button>
         </form>
 
         <% if (campaign.categories) { %>
-            <% campaign.categories.forEach(function(c) { %>
+            <% categories.forEach(function(c) { %>
+                <% console.log(`category: ${c}`) %>
+                <% if (c.campaign.id === campaign._id) { %>
                 <h3><%= c.name %></h3>
+                <% console.log(`category camp: ${c.campaign}, this campaign: ${campaign}`) %>
                 <div class="categoryNotes">
                     <% if (c.notes) { %>
                         <% c.notes.forEach(function(n) { %>
@@ -24,6 +27,7 @@
                         <% }) %>
                     <% } %>
                 </div>
+                <% } %>
             <% }) %>
         <% } %>
 
