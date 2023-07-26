@@ -6,19 +6,13 @@
 
     <div id="notesSection">
         <h1><%= campaign.name %></h1>
-        <form action="/campaigns/<%= campaign._id %>/notes" method="POST">
-            <label for="name">Note Name:</label>
-            <input type="text" name="name">
-            <label for="content">Note:</label>
-            <input type="text" name="content">
-            <button type="submit">Add Note</button>
-        </form>
+        <a type="button" href="/campaigns/<%= campaign._id %>/notes/new">Add Note</a>
 
         <% if (campaign.notes) { %>
             <% campaign.notes.forEach(function(n) { %>
                 <% console.log(`note: ${n}`) %>
 
-                <h3><%= n.name %></h3>
+                <h3><%= n.title %></h3>
                 <p><%= n.content %></p>
 
             <% }) %>
