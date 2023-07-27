@@ -39,7 +39,7 @@ const campaignSchema = new Schema({
     nextGame: {
         type: Date,
     },
-    notes: [noteSchema]
+    notes: [noteSchema],
 }, {
     timestamps: true
 })

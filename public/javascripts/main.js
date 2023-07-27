@@ -6,3 +6,13 @@ function categoryPopUp() {
         return catName
     }
 }
+
+function formatDate(date) {
+        console.log(date)
+        let formattedDate = `${date.getMonth()}-`
+            formattedDate += `${date.getDate()}-`
+            formattedDate += `${date.getFullYear()} `
+            formattedDate += `${date.getHours()}:`
+            formattedDate += `${date.getMinutes()}`
+        return formattedDate
+    }

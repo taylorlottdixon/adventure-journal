@@ -8,7 +8,7 @@ a {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Signika', sans-serif;
   color: #424748;
   margin: 0;
   height: 100vh;
@@ -300,6 +300,33 @@ div#playersSection {
   text-align: center;
 }
 
+a#addNote {
+  margin-left: auto;
+  float: right;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: whitesmoke;
+}
+
 div#notesSection > h1 {
   text-align: center;
+  margin-bottom: 2vh;
+  margin-top: 0;
+}
+
+#trash-form {
+  display: inline-block;
+  float: right
+}
+
+#trash {
+  border: none;
+  background: none;
+  float: right;
+  display: inline-block;
+}
+
+#trash:hover > span {
+  font-weight: bold;
 }
