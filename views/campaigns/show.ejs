@@ -8,8 +8,8 @@
         <h1><%= campaign.name %></h1>
         <a type="button" href="/campaigns/<%= campaign._id %>/notes/new">Add Note</a>
 
-        <% if (campaign.notes) { %>
-            <% campaign.notes.forEach(function(n) { %>
+        <% if (notes) { %>
+            <% notes.forEach(function(n) { %>
                 <% console.log(`note: ${n}`) %>
 
                 <h3><%= n.title %></h3>

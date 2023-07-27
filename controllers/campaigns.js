@@ -1,4 +1,5 @@
-const Campaign = require('../models/campaign');
+const Campaign = require('../models/campaign')
+const Note = require('../models/note')
 // const Player = require('../models/player')
 
 module.exports = {
@@ -16,9 +17,13 @@ async function index(req, res) {
 
 async function show(req, res) {
     const campaign = await Campaign.findById(req.params.id)
+<<<<<<< Updated upstream
     // const notes = await Note.find({ _id: { $nin: campaign.notes }})
+=======
+    const notes = await Note.find({ campaign: { $eq: campaign._id }})
+>>>>>>> Stashed changes
     // const players = await Player.find({ _id: { $nin: campaign.player }})
-    res.render('campaigns/show', { title: 'Campaign Notes', campaign})
+    res.render('campaigns/show', { title: 'Campaign Notes', campaign, notes})
 }
 
 function newCampaign(req, res) {

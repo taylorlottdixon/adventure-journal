@@ -2,23 +2,6 @@ const { ObjectId } = require('mongodb')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
-const noteSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-    content: String,
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-    }
-, {
-    timestamps: true
-})
-
 const campaignSchema = new Schema({
     name: {
         type: String,
@@ -39,7 +22,26 @@ const campaignSchema = new Schema({
     nextGame: {
         type: Date,
     },
+<<<<<<< Updated upstream
     notes: [noteSchema]
+=======
+    notes: {
+        type: mongoose.ObjectId,
+        ref: 'Note',
+    },
+    categories: {
+        type: mongoose.ObjectId,
+        ref: 'Category',
+    },
+    dm: {
+        type: mongoose.ObjectId,
+        ref: 'User',
+    },
+    players: {
+        type: mongoose.ObjectId,
+        ref: 'User',
+    }
+>>>>>>> Stashed changes
 }, {
     timestamps: true
 })
