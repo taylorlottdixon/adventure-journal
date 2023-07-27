@@ -9,6 +9,10 @@
         <% campaigns.forEach(function(c) { %>
             
             <div class="campaign">
+                <% if (campaigns.cover) { %>
+                    <img src="data:image/<%=campaigns.cover.contentType%>;base64,
+                        <%=campaigns.cover.data.toString('base64')%>" >
+                <% } %>
                 <h3><a href="/campaigns/<%= c._id %>"><%= c.name %></a></h3>
                 <p class="system" 
                     <% if (c.system === "D&D 5e") { %> style="background-color:Red" <% } %>
@@ -35,7 +39,7 @@
                     <span id="archive-camp-symb" class="material-symbols-outlined">
                         archive
                     </span>
-                    <form id="trash-form" action="/campaigns/<%= c._id %>?_method=DELETE" method="POST">
+                    <form action="/campaigns/<%= c._id %>?_method=DELETE" method="POST">
                         <button id="trash" type="submit"><span id="delete-camp-symb" class="material-symbols-outlined">
                         delete
                         </span></button>
