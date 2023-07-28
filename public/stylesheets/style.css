@@ -315,6 +315,11 @@ div#notesSection > h1 {
   margin-top: 0;
 }
 
+#new-note-form {
+  text-align: right;
+  gap: 1vh;
+}
+
 #trash-form {
   display: inline-block;
   float: right
@@ -329,4 +334,16 @@ div#notesSection > h1 {
 
 #trash:hover > span {
   font-weight: bold;
+}
+
+#largeText {
+  width: 60vh;
+  height: 60vh;
+}
+
+#submitNote {
+  display: flex;
+  margin: 1vh, 15vh, 1vh, 15vh;
+  justify-content: center;
+  align-items: center;
 }
