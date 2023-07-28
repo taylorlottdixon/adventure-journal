@@ -5,9 +5,9 @@
 <div id="notesMain">
 
     <div id="notesSection">
+        <a id="addNote" type="button" href="/campaigns/<%= campaign._id %>/notes/new">Add Note</a>
         <h1><%= campaign.name %></h1>
-        <a type="button" href="/campaigns/<%= campaign._id %>/notes/new">Add Note</a>
-
+        
         <% if (campaign.notes) { %>
             <% campaign.notes.forEach(function(n) { %>
                 <% console.log(`note: ${n}`) %>
