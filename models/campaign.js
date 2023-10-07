@@ -9,6 +9,11 @@ const noteSchema = new Schema({
         required: true,
     },
     content: String,
+    categories: {
+        type: ObjectId,
+        ref: 'Category',
+        default: 0o000000000,
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -25,8 +30,8 @@ const campaignSchema = new Schema({
         required: true,
     },
     system: {
-        type: String,
-        enum: ['D&D 5e', 'Pathfinder', 'Pathfinder 2e', 'Starfinder', 'Mage: The Ascension', 'Vampire: The Masquerade', 'Shadowrun', 'Fate', 'GURPS', 'Call of Cthulhu']
+        type: ObjectId,
+        ref: 'System',
     },
     gameDay: {
         type: String,
