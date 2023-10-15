@@ -3,12 +3,11 @@
 <h1><%= title %></h1>
 
 <div id="loginPage">
-    
-    <a class="googleBtn" role="button" id="loginBtn" href="/auth/google"><span class="text">LOGIN</span></a><br>
+
     <script src="https://accounts.google.com/gsi/client" async></script>
     <div id="g_id_onload"
         data-client_id="<%= process.env.GOOGLE_CLIENT_ID %>"
-        data-login_uri="/login"
+        data-login_uri="https://adventure-journal-a5b6bff19da9.herokuapp.com/login"
         data-auto_prompt="false">
     </div>
     <div class="g_id_signin"
@@ -20,6 +19,19 @@
         data-logo_alignment="left">
     </div>
 
+    <br>
+
+    <div className="login-form">
+        <form method="POST" action="/login">
+        <label>Username</label>
+        <input type="text" name="username">
+        <label>Password</label>
+        <input type="password" name="password">
+        <button type="submit" value="Login">LOG IN</button>
+        </form>
+    </div>
+        <!-- <p className="error-message">&nbsp;</p> -->
+    
 </div>
     
 <%- include('../partials/footer') %>

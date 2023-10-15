@@ -4,10 +4,10 @@ const campaignsCtrl = require('../controllers/campaigns')
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 // GET /campaigns
-router.get('/', campaignsCtrl.index);
+router.get('/', ensureLoggedIn, campaignsCtrl.index);
 // Use ensureLoggedIn middleware to protect routes
 router.get('/new', ensureLoggedIn, campaignsCtrl.new);
-router.get('/:id', campaignsCtrl.show);
+router.get('/:id', ensureLoggedIn, campaignsCtrl.show);
 router.post('/', ensureLoggedIn, campaignsCtrl.create);
 router.delete('/:id', ensureLoggedIn, campaignsCtrl.delete)
 
