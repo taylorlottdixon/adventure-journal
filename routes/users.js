@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const usersCtrl = require('../controllers/users')
 const passport = require('passport');
+const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 // Login page route
 router.get('/login', usersCtrl.login);
-
 // Signup page route
 router.get('/signup', usersCtrl.signup);
+// Account page route
+router.get('/account', ensureLoggedIn, usersCtrl.index);
 
 // POST user sign up)
 router.post('/signup', usersCtrl.create);

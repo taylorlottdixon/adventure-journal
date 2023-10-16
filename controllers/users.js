@@ -4,6 +4,7 @@ const User = require('../models/user');
 const System = require('../models/system');
 
 module.exports = {
+    index,
     login,
     signup,
     create,
@@ -17,6 +18,11 @@ function login(req, res) {
 async function signup(req, res) {
     const systems = await System.find({})
     res.render('account/signup', { title: 'Sign Up', systems })
+}
+
+async function index(req, res) {
+    const user = await User.findOne({username: req.body.username})
+    res.render('account/manage', { title: 'My Account', user })
 }
 
 async function create(req, res) {

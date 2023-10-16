@@ -5,28 +5,30 @@
 <div id="signupPage">
     
     <div class="signup-form">
+
         <form method="POST" action="/signup">
-        <label>Username</label>
-        <input type="text" name="username">
-        <label>Password</label>
-        <input type="password" name="password">
-        <label>Confirm Password</label>
-        <input type="password" name="confirm">
-        <label>Email</label>
-        <input type="email" name="email">
-        <label>Profile Picture</label>
-        <input type="file" name="avatar">
-        <label>Favorite Game Systems</label>
-        <select name="favSystems" class="fav-systems" multiple>
-            <% systems.forEach(system => { %>
-                <% console.log(system) %>
-                <% console.log(system.name) %>
-                <option value="<% system.name %>"><% system.name %></option>   
+            <label>Username</label>
+            <input type="text" name="username">
+            <label>Password</label>
+            <input type="password" name="password">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm">
+            <label>Email</label>
+            <input type="email" name="email">
+            <label>Profile Picture</label>
+            <input type="file" name="avatar">
+            <label>Favorite Game Systems</label>
+            <select name="favSystems" class="fav-systems" multiple>
+                <% systems.forEach(system => { %>
+                    <option value="<%= system.name %>"><%= system.name %></option>   
                 <% }); %>
             </select>
             <button type="submit" value="Signup">REGISTER</button>
         </form>
+        <a href="/login">I already have an account.</a>
+
     </div>
+    
     <img src="">
 
 </div>

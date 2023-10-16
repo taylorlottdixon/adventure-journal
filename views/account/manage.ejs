@@ -3,8 +3,29 @@
 <h1><%= title %></h1>
 
 <div id="accountPage">
-    
 
+    <div id="left-panel">
+        <img src="<%= user.avatar %>" alt="profile image">
+        <h3><%= user.username %></h3>
+        <p><%= user.name %></p>
+        <p><%= user.email %></p>
+        <div id="about-me">
+            <h4>About Me</h4>
+            <p><%= user.aboutMe %></p>
+        </div>
+        <div>
+            <h4>My Favorite Systems</h4>
+            <% user.favSystems.forEach(system => {
+                
+            }); %>
+        </div>
+    </div>
+
+    <div id="right-panel">
+        <h2>Campaigns I Run</h2>
+        <h2>Campaigns I'm In</h2>
+        <h2>Favorite Systems</h2>
+    </div>
 
 </div>
     
