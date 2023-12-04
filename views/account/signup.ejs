@@ -7,29 +7,42 @@
     <div class="signup-form">
 
         <form method="POST" action="/signup">
-            <label>Username</label>
-            <input type="text" name="username">
-            <label>Password</label>
-            <input type="password" name="password">
-            <label>Confirm Password</label>
-            <input type="password" name="confirm">
-            <label>Email</label>
-            <input type="email" name="email">
-            <label>Profile Picture</label>
-            <input type="file" name="avatar">
-            <label>Favorite Game Systems</label>
-            <select name="favSystems" class="fav-systems" multiple>
-                <% systems.forEach(system => { %>
-                    <option value="<%= system.name %>"><%= system.name %></option>   
-                <% }); %>
-            </select>
-            <button type="submit" value="Signup">REGISTER</button>
+            <div class="form-row">
+                <label>Username</label>
+                <input type="text" name="username">
+            </div>
+            <div class="form-row">
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <div class="form-row">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm">
+            </div>
+            <div class="form-row">
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+            <br>
+            <div class="form-row">
+                <label>Profile Picture</label>
+                <input type="file" name="avatar">
+            </div>
+            <div class="form-row">
+                <label>Favorite Game Systems</label>
+                <select name="favSystems" class="fav-systems" multiple>
+                    <% systems.forEach(system => { %>
+                        <option value="<%= system.name %>"><%= system.name %></option>   
+                    <% }); %>
+                </select>
+            </div>
+            <button class="register-btn" type="submit" value="Signup">REGISTER</button>
         </form>
         <a href="/login">I already have an account.</a>
 
     </div>
     
-    <img src="">
+    <img class="profile-img-preview" src="">
 
 </div>
     

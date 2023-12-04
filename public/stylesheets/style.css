@@ -1,3 +1,14 @@
+/* Section titles: */
+/* WEBPAGE */
+/* NAV BAR */
+/* MAIN BODY */
+/* LANDING PAGE */
+/* ACCOUNT PAGES */
+/*  */
+/*  */
+
+/* WEBPAGE */
+
 * {
   box-sizing: border-box;
 }
@@ -18,6 +29,8 @@ body {
     "nav"
     "main"
 }
+
+/* NAV BAR */
 
 body > nav {
   grid-area: nav;
@@ -69,6 +82,8 @@ nav > a.active {
   cursor: default;
 }
 
+/* MAIN BODY */
+
 body > main {
   grid-area: main;
   display: flex;
@@ -81,6 +96,8 @@ body > main {
 body > main h1:first-child {
   margin-bottom: 50px;
 }
+
+/* LANDING PAGE */
 
 #landingLogo {
   height: 20vh;
@@ -321,7 +338,6 @@ div#notesSection > h1 {
 }
 
 #trash-form {
-  display: inline-block;
   float: right
 }
 
@@ -329,7 +345,6 @@ div#notesSection > h1 {
   border: none;
   background: none;
   float: right;
-  display: inline-block;
 }
 
 #trash:hover > span {
@@ -346,4 +361,36 @@ div#notesSection > h1 {
   margin: 1vh, 15vh, 1vh, 15vh;
   justify-content: center;
   align-items: center;
+}
+
+/* ACCOUNT PAGES */
+
+.signup-form > form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  width: 100%;
+  column-gap: 1rem;
+}
+
+.form-row > label {
+  justify-items: left;
+}
+
+.form-row > input {
+  justify-items: right;
+  margin-left: auto;
+}
+
+.register-btn {
+  margin: 0 25% 0 25%;
+}
+
+.profile-img-preview {
+  float: right;
 }
